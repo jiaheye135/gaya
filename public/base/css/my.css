@@ -1,0 +1,21 @@
+.my-error_msg{
+    color: red;
+    text-align: left;
+    display: none;
+    margin-top: 0.5em;
+}
+
+.my-preview{
+    max-width: 100%;
+    display: none;
+}
+
+.my-file_name{
+    display: none;
+}
+
+.my-sub_title{
+    margin-left: 0.5em;
+    font-size: 14px;
+    color: red;
+}
