@@ -135,6 +135,18 @@ class BaseController extends Controller
                 ],
             ],
         ],
+        // 服務項目
+        'service_items' => [ 'isMenu' => 1, 'groupTitie' => '', 'title' => '服務項目', 'defActive' => 1, 'iconClass' => 'fa-chart-area',
+            'menuType' => 2
+        ],
+        // 個案紀錄
+        'case-record' => [ 'isMenu' => 1, 'groupTitie' => '', 'title' => '個案紀錄', 'defActive' => 1, 'iconClass' => 'fa-chart-area',
+            'menuType' => 2, 
+            'editPage' => [
+                'case-user'        => [ 'isMenu' => 0, 'groupTitie' => '', 'title' => '個案明細', 'defActive' => 0],
+                'case-user-record' => [ 'isMenu' => 0, 'groupTitie' => '', 'title' => '新增紀錄', 'defActive' => 0],
+            ],
+        ],
     ];
 
     protected static $frontMap = [
@@ -558,6 +570,28 @@ class BaseController extends Controller
     {
         $disabledType = ['multiple', 'singlefile'];
         $detailList = $rep->detailList;
+
+        foreach($detailList as $row){
+            if(!in_array($row['type'], $disabledType)) continue;
+
+            $id = $row['id'];
+            if(!isset($data[$id])) continue;
+
+            if($type == 'add'){
+                $data[$id] = '';
+            }
+
+            if($type == 'edit'){
+                unset($data[$id]);
+            }
+        }
+
+        return $data;
+    }
+
+    public function basePretreatmentDataV1($detailList, $data, $type)
+    {
+        $disabledType = ['multiple', 'singlefile'];
 
         foreach($detailList as $row){
             if(!in_array($row['type'], $disabledType)) continue;

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Backend\CaseRecordController;
+use App\Http\Controllers\Backend\ServiceItemsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -98,5 +100,20 @@ Route::group(['prefix' => 'admin-backend'], function () {
         Route::get('adminList', 'Backend\AdminsController@adminList');
         Route::get('adminListEdit', 'Backend\AdminsController@adminListEdit');
         Route::post('ajaxAdminMgmt', 'Backend\AdminsController@ajaxAdminMgmt');
+
+        // 服飾項目(view)
+        Route::get('service_items', [ServiceItemsController::class, 'serviceItems']);
+        // 取得服務項目(ajax)
+        Route::post('get-service-items', [ServiceItemsController::class, 'getServiceIiems']);
+        // 編輯服飾項目(ajax)
+        Route::post('edit-service-item', [ServiceItemsController::class, 'editServiceIiem']);
+
+        // 個案紀錄(view)
+        Route::get('case-record', [CaseRecordController::class, 'caseRecord']);
+        // 取得個案列表(ajax)
+        Route::post('get-case-user-list', [CaseRecordController::class, 'getCaseUserList']);
+        Route::get('case-user', [CaseRecordController::class, 'caseUser']);
+        Route::post('case-user-edit', [CaseRecordController::class, 'caseUserEdit']);
+        Route::get('case-user-record', [CaseRecordController::class, 'caseUserRecord']);
     });
 });
