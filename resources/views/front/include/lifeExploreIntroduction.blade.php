@@ -9,7 +9,7 @@
             </div>
             <div class="col-lg-8 col-sm-12">
                 <div class="">
-                    <h2 class="title">生命探索介紹<span class="large-eng">about us</span></h2>
+                    <h2 class="title">關於我們<span class="large-eng">about us</span></h2>
                     {!! $data['indexInfo'][1]->value !!}
                     <div class="more-link" style="cursor: pointer;" onclick="javascript:location.href='{{ $basePath }}aboutLE?data=JTdCJTIydGltZSUyMiUzQSUyMjIwMjEtMDItMjQrMTMlM0E1MyUzQTIzJTIyJTJDJTIya2V5JTIyJTNBJTIyYzRjYTQyMzhhMGI5MjM4MjBkY2M1MDlhNmY3NTg0OWIlMjIlN0Q%3D';">more</div>
                 </div>

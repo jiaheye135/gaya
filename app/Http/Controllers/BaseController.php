@@ -33,7 +33,7 @@ class BaseController extends Controller
                 // 子選單
                 'lifeExploreIndex' => ['isMenu' => 1, 'groupTitie' => '', 'title' => '生命探索介紹', 'defActive' => 0],
                 // 子選單
-                'icelandArticleIndex' => ['isMenu' => 1, 'groupTitie' => '', 'title' => '冰山理論文章連結', 'defActive' => 0],
+                // 'icelandArticleIndex' => ['isMenu' => 1, 'groupTitie' => '', 'title' => '冰山理論文章連結', 'defActive' => 0],
                 // 子選單
                 'studentShareIndex' => ['isMenu' => 1, 'groupTitie' => '', 'title' => '學員分享', 'defActive' => 0],
             ],
@@ -53,31 +53,14 @@ class BaseController extends Controller
             ],
         ],
         // 父選單
-        'groupStudentShare' => [ 'isMenu' => 1, 'groupTitie' => '', 'title' => '學員分享管理', 'defActive' => 0, 'iconClass' => 'fa-chart-area',
+        'groupArticleShare' => [ 'isMenu' => 1, 'groupTitie' => '', 'title' => '文章分享分類', 'defActive' => 0, 'iconClass' => 'fa-chart-area',
             'menuType' => 1, 'subMenu' => [
-                // 子選單
-                'ssCategoryMgmt' => ['isMenu' => 1, 'groupTitie' => '', 'title' => '學員分享分類', 'defActive' => 0,
-                    'editPage' => [
-                        'ssCategoryMgmtEdit' => ['isMenu' => 0, 'groupTitie' => '', 'title' => '學員分享分類內容', 'defActive' => 0],
-                    ]
-                ],
-                // 子選單
-                'studentShareMgmt' => ['isMenu' => 1, 'groupTitie' => '', 'title' => '學員分享文章', 'defActive' => 0,
-                    'editPage' => [
-                        'studentShareMgmtEdit' => ['isMenu' => 0, 'groupTitie' => '', 'title' => '學員分享文章內容', 'defActive' => 0],
-                    ]
-                ],
-            ],
-        ],
-        // 父選單
-        'groupArticleShare' => [ 'isMenu' => 1, 'groupTitie' => '', 'title' => '文章分享管理', 'defActive' => 0, 'iconClass' => 'fa-chart-area',
-            'menuType' => 1, 'subMenu' => [
-                // 子選單
-                'asCategoryMgmt' => ['isMenu' => 1, 'groupTitie' => '', 'title' => '文章分享分類', 'defActive' => 0,
-                    'editPage' => [
-                        'asCategoryMgmtEdit' => ['isMenu' => 0, 'groupTitie' => '', 'title' => '文章分享分類內容', 'defActive' => 0],
-                    ]
-                ],
+                // // 子選單
+                // 'asCategoryMgmt' => ['isMenu' => 1, 'groupTitie' => '', 'title' => '文章分享分類', 'defActive' => 0,
+                //     'editPage' => [
+                //         'asCategoryMgmtEdit' => ['isMenu' => 0, 'groupTitie' => '', 'title' => '文章分享分類內容', 'defActive' => 0],
+                //     ]
+                // ],
                 // 子選單
                 'articleShareMgmt' => ['isMenu' => 1, 'groupTitie' => '', 'title' => '文章分享文章', 'defActive' => 0,
                     'editPage' => [
@@ -120,10 +103,6 @@ class BaseController extends Controller
      */
 
     public static $backendMainMenu = [
-        // 優惠券領取列表
-        'couponMember' => [ 'isMenu' => 1, 'groupTitie' => '', 'title' => '優惠券領取列表', 'defActive' => 0, 'iconClass' => 'fa-chart-area',
-            'menuType' => 2
-        ],
         // 系統設定 (2層)
         'groupSystem' => [ 'isMenu' => 1, 'groupTitie' => '', 'title' => '系統設定', 'defActive' => 0, 'iconClass' => 'fa-chart-area',
             'menuType' => 1, 'subMenu' => [
@@ -217,8 +196,8 @@ class BaseController extends Controller
             $this->baseGetFrontTitle();
 
             // IG
-            // $serv = new InstagramService();
-            // \View::share('IGInfo', $serv->getMediaId());
+            $serv = new InstagramService();
+            \View::share('IGInfo', $serv->getMediaId());
         }
 
         \View::share('basePath', static::$basePath);
@@ -360,11 +339,11 @@ class BaseController extends Controller
     public function baseGetFrontMenu()
     {
         $frontMenu = [
-            'aboutMenu'    => ['title' => '關於生命探索', 'subMenu' => []],
-            'course'       => ['title' => '課程介紹', 'subMenu' => []],
-            'studentShare' => ['title' => '學員分享', 'subMenu' => []],
-            'articleShare' => ['title' => '文章分享', 'subMenu' => []],
-            'photoGallery' => ['title' => '花絮紀錄', 'subMenu' => []],
+            'aboutMenu'    => ['title' => '關於馨靈魂', 'subMenu' => []],
+            'course'       => ['title' => '服務介紹', 'subMenu' => []],
+            'studentShare' => ['title' => '改變的旅程', 'subMenu' => []],
+            'articleShare' => ['title' => '好文共享', 'subMenu' => []],
+            'photoGallery' => ['title' => '活動訊息', 'subMenu' => []],
         ];
 
         // 關於生命探索
@@ -725,5 +704,18 @@ class BaseController extends Controller
                 }
             }
         }
+    }
+
+    public function getOption($data, $key, $val, $add = []){
+        $option = [];
+
+        // if(isset($selectAdd[$id])){
+        //     foreach($selectAdd[$id] as $k => $v){
+        //         $option[$k] = $v;
+        //     }
+        // }
+
+        foreach($data as $v){ $option[$v->{$key}] = $v->{$val}; }
+        return $option;
     }
 }

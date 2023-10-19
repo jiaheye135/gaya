@@ -96,7 +96,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="thebeiginning">一開始的相遇</div>
+                <div class="thebeiginning">心靈初次相遇</div>
                 <h2 class="title thebeiginTitle">體驗會介紹<span class="large-eng">experience</span></h2>
                 <div class="sub-title"></div>
             </div>
@@ -115,8 +115,8 @@
 </div>
 <div class="iceland-div">
     <div class="section pd_0 iceland-top">
-        <img src="{{ $webPath }}assets/images/iceland/iceland-top.png" class="desktop-only">
-        <img src="{{ $webPath }}assets/images/mobile/iceland-top1.png" class="mobile-only">
+        <img src="" class="desktop-only">
+        <img src="" class="mobile-only">
         <div class="container centered">
             <div class="row">
                 <div class="text-div">
@@ -130,44 +130,7 @@
             </div>
         </div>
     </div>
-    <div class="section pd_0 iceland-bottom desktop-only iceland-parent">
-        <img id="iceland-img" onload="icelandResize()" src="{{ $webPath }}assets/images/iceland/iceland-bottom.png" width="100%">
-
-        <?php foreach ($data['icelandArticleInfo'] as $icelandKey => $d){ ?>
-        <div class="iceland-item">
-            <?php 
-                $shadow = 'shadow.png'; $class = ''; $link = '';
-                if ($d->href){ $class = 'cursor-pointer'; $link = 'href=' . $d->href; }
-                if ($icelandKey == 'icon-02'){ $shadow = 'shadow1.png'; }
-            ?>
-
-            <a {{ $link }}>
-                <img src="{{ $basePath . $d->item_img }}" class="iceland-icon {{ $class }}" data-icon="{{ $icelandKey }}">
-                <img src="{{ $webPath }}assets/images/iceland/{{ $shadow }}" class="iceland-shadow">
-            </a>
-            
-            <?php if ($d->href){ ?>
-            <div class="iceband-icon-text iceland-hide">
-                <div>{{ $d->article_type_title }}</div>
-                <div>{{ $d->myTitle }}<!-- <div class="numbers">2</div> --></div>
-            </div>
-            <?php } ?>
-        </div>
-        <?php } ?>
-        
-    </div>
     <!-- END SECTION -->
-    <div class="section pd_0 mobile-only">
-        <img src="{{ $webPath }}assets/images/mobile/iceland-bottom1.png" name="icelandMapMobile" usemap="#icelandMapMobile"
-            width="100%">
-        <map name="icelandMapMobile">
-            @foreach ($data['icelandArticleInfo'] as $icelandKey => $d)
-                @if ($d->href)
-                <area shape="rect" coords="{{ $d->position }}" alt="" href="{{ $d->href }}" class="iceland-map">
-                @endif
-            @endforeach
-        </map>
-    </div>
 </div>
 
 <style>

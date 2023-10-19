@@ -12,7 +12,7 @@
                         <div class="col-md-6 col-sm-12">
                             <div class="info-icons"><i class="fab fa-facebook-square"></i></div>
                             <div class="info-main-title">粉絲專頁</div>
-                            <div class="fb-page" data-href="https://www.facebook.com/yunroung/" data-tabs="timeline" data-width="300" data-height="289" data-hide-cta="true" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/yunroung/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/yunroung/">生命探索 ~回到源頭可以不用繞遠路</a></blockquote></div>
+                            <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100093273246946" data-tabs="timeline" data-width="300" data-height="289" data-hide-cta="true" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100093273246946" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100093273246946">生命探索 ~回到源頭可以不用繞遠路</a></blockquote></div>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <div class="info-icons"><i class="fab fa-instagram"></i></div>

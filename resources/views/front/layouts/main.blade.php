@@ -24,12 +24,12 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js"></script>
 
-    <div class = "fb-customerchat mys"
+    <!-- <div class = "fb-customerchat mys"
         page_id = "190369774334026"
         theme_color = "#F39700"
         logged_in_greeting="歡迎有任何想法，都可以跟我們聯絡哦~" 
         >
-    </div>
+    </div> -->
 
     <!-- top header -->
     <div class="wrapper">

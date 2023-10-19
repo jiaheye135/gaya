@@ -6,7 +6,7 @@
                 <div class="col-md-12">
                     <div class="logo">
                         <a href="{{ $basePath }}">
-                            <img src="{{ $webPath }}assets/images/logo.png" alt="生命探索" class="logo-img">
+                            <!-- <img src="{{ $webPath }}assets/images/logo.png" alt="生命探索" class="logo-img"> -->
                         </a>
                         <div class="f-right">
                             <ul class="header_list">
